@@ -1,0 +1,18 @@
+<div class="d-flex flex-column" style="justify-content: center">
+  <div class="p-2 flex-fill border-bottom" *ngFor="let weather of weatherList">
+    <div class="d-flex flex-row mb-3">
+      <div class="p-2">
+        <img
+          src="http://openweathermap.org/img/wn/{{
+            weather.weather[0].icon
+          }}.png"
+        />
+      </div>
+      <div class="p-2 flex-grow-1 text-center">
+        <h5>{{ weather.dt_txt | date: "EEEE, MMM d" }}</h5>
+        <p>{{ weather.weather[0].description }}</p>
+      </div>
+      <div class="p-2">{{ weather.wind?.deg }}°</div>
+    </div>
+  </div>
+</div>
